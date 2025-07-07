@@ -1,0 +1,51 @@
+header {
+    margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h2 {
+    color: var(--secondy-color);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+header h2 span {
+    font-weight: 600;
+}
+
+header h2 span.rosa {
+    font-weight: 600;
+    color: var(--rosa);
+}
+
+header p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #172e35;
+
+    margin-bottom: 2rem;
+}
+
+header p span {
+    font-weight: 600;
+}
+
+header p span.rosa {
+    font-weight: 600;
+    color: var(--rosa);
+}
+
+@media (min-width: 1080px) {
+    header h2 {
+        font-size: 4rem;
+    }
+
+    header p {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,135 @@
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  #slide {
+    padding-block: 0;
+    position: relative;
+
+    margin-top: -2rem;
+
+    max-width: 99vw;
+  }
+
+  #slide .slide-content {
+    overflow: hidden !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    max-width: 100%;    
+  }
+
+  #slide .slide-content.one {
+    transform: rotate(4deg);
+
+    filter: blur(4px);
+    opacity: .9;
+  }
+
+  #slide .slide-content.two {
+    transform: rotate(-4deg);
+    margin-top: 0rem;
+  }
+  
+  #slide .slide {
+    overflow: hidden !important;
+    padding: 2rem 0;
+
+    display: flex;
+    white-space: nowrap;
+  
+    position: relative;
+  }
+
+  #slide .slide .slide-text {
+
+  }
+
+  #slide .slide.um {
+    background: var(--gradient);
+  }
+
+  #slide .slide.dois {
+    background: var(--secondy-color);
+  }
+  
+  #slide .slide-text {
+    animation: slide 40s infinite linear;
+    display: flex;
+    align-items: center;
+  }
+
+  #slide .slide.um .slide-text p {
+    color: var(--secondy-color);
+  }
+  
+  #slide .slide-text p {
+    font-size: 1.4rem;
+    margin: 0 2rem;
+    position: relative;
+    color: #89C7D2;
+  }
+
+  #slide .slide img {
+    width: 2rem;
+  }
+
+@media (min-width: 1080px) {    
+  #slide .slide:before,
+  #slide .slide:after {
+    width: 25rem;
+  }
+
+  #slide .slide-content,
+  #slide .slide-content.um,
+  #slide .slide-content.dois {
+    max-width: none;
+  }
+
+  #slide .slide-content.two {
+    margin-top: -22rem;
+  }
+
+  #slide.um {
+    margin-top: 10rem;
+    margin-left: -1rem;
+  }
+
+  #slide .slide-text p {
+    font-size: 1.4rem;
+    margin: 0 2rem;
+  }
+
+  #slide .slide img {
+    width: 4rem;
+  }
+
+  section#slide .slide-text {
+    animation: slide 50s infinite linear;
+  }
+
+  #slide .slide-content.one {
+    transform: rotate(3deg);
+  }
+
+  #slide .slide-content.two {
+    transform: rotate(-3deg);
+  }
+}
+
+@media (min-width: 1700px) {
+  #slide.um {
+    margin-top: 5rem;
+  }
+
+  #slide .slide-content.two {
+    margin-top: -23.3rem;
+  }
+}

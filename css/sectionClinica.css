@@ -1,0 +1,89 @@
+#clinica {
+    overflow: hidden;
+    position: relative;
+}
+
+#clinica header {
+    margin-bottom: 0;
+}
+
+#clinica header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #28505C;
+}
+
+#clinica header h4 {
+    background: var(--gradient);
+    color: #162b32;
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    font-weight: 500;
+
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#clinica header p.dois {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
+#clinica img {
+    width: 100%;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#clinica img.desktop {
+    display: none;
+}
+
+#clinica header p.dois {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
+#clinica a button {
+    margin-top: 2rem;
+}
+
+@media (min-width: 1080px) {
+    section#clinica .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+        align-items: center;
+        grid-template-areas: "a b";
+    }
+
+    section#clinica header {
+        margin-bottom: 0;
+        align-items: start;
+        text-align: left;
+        grid-area: b;
+    }
+
+    section#clinica header h2 {
+        font-size: 4.5rem;
+        width: 90%;
+
+        margin-bottom: 1rem;
+    }
+
+    section#clinica img.desktop {
+        display: inherit;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        aspect-ratio: 16/14;
+        object-fit: cover;
+        border-radius: 2rem;
+    }
+
+    section#clinica img.mobile {
+        display: none;
+    }
+}

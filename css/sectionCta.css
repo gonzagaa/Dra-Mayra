@@ -1,0 +1,27 @@
+#cta header h2 {
+    margin-bottom: 1rem;
+}
+
+#cta header {
+    margin-bottom: 0;
+}
+
+#cta img.logo {
+    width: 25rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1080px) {
+    section#cta {
+        padding-top: 0;
+        padding-bottom: 6rem;
+    }
+
+    section#cta header {
+        padding-inline: 20%;
+    }
+
+    section#cta header p {
+        padding-inline: 5%;
+    }
+}

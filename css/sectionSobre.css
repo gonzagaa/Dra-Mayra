@@ -1,0 +1,70 @@
+#sobre {
+    overflow: hidden;
+    position: relative;
+    padding-top: 8rem;
+}
+
+#sobre .content {
+    position: relative;
+    z-index: 1;
+}
+
+#sobre header h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+#sobre header p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#sobre img {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#sobre a button {
+    margin-top: 2rem;
+}
+
+@media (min-width: 1080px) {
+    section#sobre {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    section#sobre .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+        align-items: center;
+        grid-template-areas: "a b";
+    }
+
+    section#sobre header {
+        margin-bottom: 0;
+        align-items: start;
+        text-align: left;
+        grid-area: b;
+        margin-bottom: 0;
+    }
+
+    section#sobre header h2 {
+        font-size: 4rem;
+
+        margin-bottom: 1rem;
+    }
+
+    section#sobre img {
+        margin-bottom: 0;
+    }
+
+    section#sobre header p {
+        font-size: 1.6rem;
+    }
+
+    section#sobre a button {
+        margin-top: 2rem;
+    }
+}

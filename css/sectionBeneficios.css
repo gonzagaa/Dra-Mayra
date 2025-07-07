@@ -1,0 +1,79 @@
+#beneficios {
+    overflow: hidden;
+    position: relative;
+}
+
+#beneficios .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#beneficios .card {
+    text-align: left;
+
+    border-left: 3px solid var(--rosa);
+    height: 100%;
+
+    padding-left: 2rem;
+    padding-block: 1rem;
+}
+
+#beneficios .card h4 {
+    background: linear-gradient(to right, #96227B, #c636a4);
+    color: #f1c1e6;
+    padding: .6rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    width: max-content;
+}
+
+#beneficios .card h3 {
+    font-size: 2.5rem;
+    color: var(--secondy-color);
+    font-weight: 600;
+}
+
+#beneficios .card h3 span {
+    font-weight: 600;
+}
+
+#beneficios .card p {
+    font-size: 1.4rem;
+    color: var(--secondy-color);
+    margin-top: 1rem;
+}
+
+#beneficios a button {
+    margin-top: 3rem;
+}
+ 
+@media (min-width: 1080px) {
+    section#beneficios {
+        margin-top: 0;
+    }
+
+    section#beneficios .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    section#beneficios .card {
+        padding-left: 3rem;
+    }
+
+    section#beneficios a button {
+        margin-top: 5rem;
+    }
+
+    section#beneficios .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

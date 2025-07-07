@@ -1,0 +1,118 @@
+/* From Uiverse.io by adeladel522 */ 
+a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    font-family: 'Paralucent-Medium', sans-serif;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.126);
+    padding-block: 2rem;
+    padding-inline: 2rem;
+    background: var(--gradient);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--secondy-color);
+    gap: 10px;
+    font-weight: 600;
+    outline: none;
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 1.2;
+    border: none;
+  }
+
+  .button.rosa {
+    background: linear-gradient(to right, #96227B, #c636a4);
+    color: #f1c1e6;
+    font-weight: 500;
+  }
+  
+  .button .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button:hover,
+  #rd-button-m5in9w3x.rd-button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+  }
+  
+  .button:hover .icon {
+    transform: translate(4px);
+  }
+  
+  .button:hover::before,
+  #rd-button-m5in9w3x.rd-button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(113, 221, 194, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+    animation: shine 2s ease-out infinite;
+  }
+
+  .button.rosa::before {
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      #f1c1e6,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+
+  @media (min-width: 1080px) {
+    button.button {
+        width: initial;
+        padding: 2rem 4.5rem;
+        font-size: 22px;
+    }
+
+    section#cadastro #rd-button-m5in9w3x.rd-button {
+      padding: 2rem 4.5rem;
+        font-size: 22px;
+    }
+
+    header#home a button img {
+      margin-top: -.25rem;
+    }
+
+    a {
+      width: initial;
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    60% {
+      left: 100%;
+    }
+  
+    to {
+      left: 100%;
+    }
+  }
+  
