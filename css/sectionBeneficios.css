@@ -3,6 +3,10 @@
     position: relative;
 }
 
+#beneficios header h2 {
+    font-size: 2rem;
+}
+
 #beneficios .cards {
     display: flex;
     flex-direction: column;
@@ -55,6 +59,11 @@
 @media (min-width: 1080px) {
     section#beneficios {
         margin-top: 0;
+    }
+
+    section#beneficios header h2 {
+        font-size: 4rem;
+        padding-inline: 10%;
     }
 
     section#beneficios .cards {

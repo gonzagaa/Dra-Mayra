@@ -26,7 +26,9 @@ header h2 span.rosa {
 header p {
     font-size: 1.4rem;
     line-height: 1.4;
-    color: #172e35;
+    color: var(--secondy-color);
+    margin-top: 1rem;
+    font-weight: 500;
 
     margin-bottom: 2rem;
 }
