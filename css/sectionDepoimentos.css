@@ -179,7 +179,7 @@ section#depoimentos .content .cards .card .text p {
     -webkit-box-orient: unset;
     }
 
-    section#depoimentos .content {
+    body section#depoimentos .content {
         z-index: 10;
     }
 }
