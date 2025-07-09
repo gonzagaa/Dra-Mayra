@@ -30,14 +30,14 @@
     margin-bottom: 0;
 }
 
-#clinica img {
+#clinica iframe {
     width: 100%;
-
+    border-radius: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-#clinica img.desktop {
+#clinica iframe.desktop {
     display: none;
 }
 
@@ -73,7 +73,7 @@
         margin-bottom: 1rem;
     }
 
-    section#clinica img.desktop {
+    section#clinica iframe.desktop {
         display: inherit;
         margin-top: 0;
         margin-bottom: 0;
@@ -83,7 +83,7 @@
         border-radius: 2rem;
     }
 
-    section#clinica img.mobile {
+    section#clinica iframe.mobile {
         display: none;
     }
 }
