@@ -490,6 +490,49 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
       </div>
     </section>
 
+    <script>
+  function getCookieValue(name) {
+    const match = document.cookie.match(new RegExp(name + "=([^;]+)"));
+    return match ? match[1] : null;
+  }
+
+  function generateEventId() {
+    return self.crypto?.randomUUID?.() || Date.now().toString();
+  }
+
+  function sendFacebookEvent(eventName, extraData = {}) {
+    const fbp = getCookieValue("_fbp");
+    const fbc = getCookieValue("_fbc");
+    const eventId = generateEventId();
+
+    // Pixel frontend
+    fbq('track', eventName, {}, { eventID: eventId });
+
+    // API backend
+    fetch("https://backend-dramayrastorti.vercel.app/send-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventName,
+        eventId,
+        fbp,
+        fbc,
+        ...extraData
+      })
+    });
+  }
+
+  // Disparo PageView
+  sendFacebookEvent("PageView");
+
+  // Disparo Lead em todos os botões
+  document.querySelectorAll("button, a").forEach(el => {
+    el.addEventListener("click", () => {
+      sendFacebookEvent("Lead");
+    });
+  });
+    </script>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPBRHJ3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
