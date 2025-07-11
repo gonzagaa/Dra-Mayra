@@ -21,6 +21,8 @@ app.post("/send-event", async (req, res) => {
       phone
     } = req.body;
 
+    console.log("✅ Dados recebidos na API:", req.body);
+
     const hashedEmail = email
       ? crypto.createHash("sha256").update(email).digest("hex")
       : undefined;
@@ -46,14 +48,18 @@ app.post("/send-event", async (req, res) => {
       ]
     };
 
+    console.log("📦 Payload enviado para Facebook:", JSON.stringify(payload, null, 2));
+
     const response = await axios.post(
       `https://graph.facebook.com/v19.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`,
       payload
     );
 
+    console.log("✅ Evento enviado com sucesso:", response.data);
+
     res.status(200).json({ success: true, response: response.data });
   } catch (err) {
-    console.error("Erro ao enviar evento:", err.response?.data || err.message);
+    console.error("❌ Erro ao enviar evento:", err.response?.data || err.message);
     res.status(500).json({ success: false, error: err.message });
   }
 });

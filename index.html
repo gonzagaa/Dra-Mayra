@@ -505,20 +505,28 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
     const fbc = getCookieValue("_fbc");
     const eventId = generateEventId();
 
-    // Pixel frontend
+    console.log("🎯 Enviando evento Pixel:", eventName, "com ID:", eventId);
     fbq('track', eventName, {}, { eventID: eventId });
 
-    // API backend
+    const payload = {
+      eventName,
+      eventId,
+      fbp,
+      fbc,
+      ...extraData
+    };
+
+    console.log("🚀 Enviando evento para API:", payload);
+
     fetch("https://backend-dramayrastorti.vercel.app/send-event", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        eventName,
-        eventId,
-        fbp,
-        fbc,
-        ...extraData
-      })
+      body: JSON.stringify(payload)
+    }).then(async res => {
+      const data = await res.json();
+      console.log("✅ Resposta da API:", data);
+    }).catch(err => {
+      console.error("❌ Erro ao enviar para API:", err);
     });
   }
 
@@ -531,7 +539,8 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
       sendFacebookEvent("Lead");
     });
   });
-    </script>
+</script>
+
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPBRHJ3"
