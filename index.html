@@ -490,7 +490,7 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
       </div>
     </section>
 
-    <script>
+<script>
   function getCookieValue(name) {
     const match = document.cookie.match(new RegExp(name + "=([^;]+)"));
     return match ? match[1] : null;
@@ -516,6 +516,11 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
       ...extraData
     };
 
+    // 👇 Adiciona dados fictícios se estiver enviando PageView e não tiver fbc/em/ph
+    if (eventName === "PageView") {
+      payload.email = "teste@fallback.com"; // Será criptografado no backend
+    }
+
     console.log("🚀 Enviando evento para API:", payload);
 
     fetch("https://backend-dramayrastorti.vercel.app/send-event", {
@@ -530,16 +535,17 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
     });
   }
 
-  // Disparo PageView
+  // Envia PageView com fallback
   sendFacebookEvent("PageView");
 
-  // Disparo Lead em todos os botões
+  // Envia Lead em todos os botões
   document.querySelectorAll("button, a").forEach(el => {
     el.addEventListener("click", () => {
       sendFacebookEvent("Lead");
     });
   });
 </script>
+
 
 
     <!-- Google Tag Manager (noscript) -->
