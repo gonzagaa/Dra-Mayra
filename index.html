@@ -490,63 +490,61 @@ src="https://www.facebook.com/tr?id=1249433060161533&ev=PageView&noscript=1"
       </div>
     </section>
 
-<script>
-  function getCookieValue(name) {
-    const match = document.cookie.match(new RegExp(name + "=([^;]+)"));
-    return match ? match[1] : null;
-  }
+    <script>
+      function getCookieValue(name) {
+        const match = document.cookie.match(new RegExp(name + "=([^;]+)"));
+        return match ? match[1] : null;
+      }
 
-  function generateEventId() {
-    return self.crypto?.randomUUID?.() || Date.now().toString();
-  }
+      function generateEventId() {
+        return self.crypto?.randomUUID?.() || Date.now().toString();
+      }
 
-  function sendFacebookEvent(eventName, extraData = {}) {
-    const fbp = getCookieValue("_fbp");
-    const fbc = getCookieValue("_fbc");
-    const eventId = generateEventId();
+      function sendFacebookEvent(eventName, extraData = {}) {
+        const fbp = getCookieValue("_fbp");
+        const fbc = getCookieValue("_fbc");
+        const eventId = generateEventId();
 
-    console.log("🎯 Enviando evento Pixel:", eventName, "com ID:", eventId);
-    fbq('track', eventName, {}, { eventID: eventId });
+        console.log("🎯 Enviando evento Pixel:", eventName, "com ID:", eventId);
+        fbq('track', eventName, {}, { eventID: eventId });
 
-    const payload = {
-      eventName,
-      eventId,
-      fbp,
-      fbc,
-      ...extraData
-    };
+        const payload = {
+          eventName,
+          eventId,
+          fbp,
+          fbc,
+          ...extraData
+        };
 
-    // 👇 Adiciona dados fictícios se estiver enviando PageView e não tiver fbc/em/ph
-    if (eventName === "PageView") {
-      payload.email = "teste@fallback.com"; // Será criptografado no backend
-    }
+        // 👇 Adiciona dados fictícios se estiver enviando PageView e não tiver fbc/em/ph
+        if (eventName === "PageView") {
+          payload.email = "teste@fallback.com"; // Será criptografado no backend
+        }
 
-    console.log("🚀 Enviando evento para API:", payload);
+        console.log("🚀 Enviando evento para API:", payload);
 
-    fetch("https://backend-dramayrastorti.vercel.app/send-event", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    }).then(async res => {
-      const data = await res.json();
-      console.log("✅ Resposta da API:", data);
-    }).catch(err => {
-      console.error("❌ Erro ao enviar para API:", err);
-    });
-  }
+        fetch("https://backend-dramayrastorti.vercel.app/send-event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).then(async res => {
+          const data = await res.json();
+          console.log("✅ Resposta da API:", data);
+        }).catch(err => {
+          console.error("❌ Erro ao enviar para API:", err);
+        });
+      }
 
-  // Envia PageView com fallback
-  sendFacebookEvent("PageView");
+      // Envia PageView com fallback
+      sendFacebookEvent("PageView");
 
-  // Envia Lead em todos os botões
-  document.querySelectorAll("button, a").forEach(el => {
-    el.addEventListener("click", () => {
-      sendFacebookEvent("Lead");
-    });
-  });
-</script>
-
-
+      // Envia Lead em todos os botões
+      document.querySelectorAll("button, a").forEach(el => {
+        el.addEventListener("click", () => {
+          sendFacebookEvent("Lead");
+        });
+      });
+    </script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPBRHJ3"
