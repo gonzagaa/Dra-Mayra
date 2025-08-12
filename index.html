@@ -6,6 +6,23 @@
     <title>Dra. Mayra Storti - Nutrologia referência em emagrecimento saudável e constante</title>
     <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
 
+    <!-- MOBILE: preload da imagem LCP -->
+    <link rel="preload" as="image"
+          href="./assets/BANNER MOBILE.webp"
+          imagesrcset="./assets/BANNER MOBILE.webp"
+          imagesizes="100vw"
+          fetchpriority="high"
+          media="(max-width: 767px)">
+
+    <!-- DESKTOP: preload da imagem LCP -->
+    <link rel="preload" as="image"
+          href="./assets/BANNER.webp"
+          imagesrcset="./assets/BANNER.webp"
+          imagesizes="100vw"
+          fetchpriority="high"
+          media="(min-width: 768px)">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -62,6 +79,10 @@
 <body id="body" class="smooth-scroll-wrapper">
 
     <header class="header" id="home"> 
+      <div class="image">
+        <img fetchpriority="high" class="desktop" src="./assets/BANNER.webp" alt="">
+        <img fetchpriority="high" class="mobile" src="./assets/BANNER MOBILE.webp" alt="">
+      </div>
       <div class="wrapper">
         <div class="content">
             <div class="text" data-aos="fade-up">
@@ -81,10 +102,6 @@
             </div>
           </div>
       </div>      
-      <div class="image">
-        <img fetchpriority="high" class="desktop" src="./assets/BANNER.webp" alt="">
-        <img fetchpriority="high" class="mobile" src="./assets/BANNER MOBILE.webp" alt="">
-      </div>
     </header>
 
     <section id="slide" class="um">
@@ -486,7 +503,7 @@
       </div>
     </section>
 
-    <script>
+    <script defer>
   function getCookieValue(name) {
     const match = document.cookie.match(new RegExp(name + "=([^;]+)"));
     return match ? match[1] : null;
@@ -549,7 +566,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-    <script>
+    <script defer>
       // Initialize Lenis with options
       const lenis = new Lenis({
         smooth: true, // Ativa o scroll suave
@@ -574,6 +591,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./script.js?v=6"></script>
+    <script defer src="./script.js?v=6"></script>
 </body>
 </html> 
