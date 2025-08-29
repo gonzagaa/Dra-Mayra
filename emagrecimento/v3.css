@@ -1,0 +1,27 @@
+body.v3 #home h1 {
+    font-size: 3.2rem;
+}
+
+body.v3 #home h4 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--primary-color);
+}
+
+body.v3 #sobre {
+    padding-top: 4rem;
+}
+
+@media (min-width: 1080px) {
+    body.v3 header#home h1 {
+        font-size: 5rem;
+    }
+
+    body.v3 section#services .row-2 .card:nth-child(3) h3 {
+        font-size: 2rem;
+    }
+
+    body.v3 section#services .row-2 .card:nth-child(3) p {
+        font-size: 1.4rem;
+    }
+}
