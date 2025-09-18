@@ -1,0 +1,9 @@
+@media (min-width: 1080px) {
+    body.v4 header#home h1 {
+        font-size: 5rem;
+    }
+
+    body.v4 section#services .row-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
