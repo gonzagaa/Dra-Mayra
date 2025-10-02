@@ -1,0 +1,70 @@
+#sibo {
+    overflow: hidden;
+    position: relative;
+    padding-top: 8rem;
+}
+
+#sibo .content {
+    position: relative;
+    z-index: 1;
+}
+
+#sibo header h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+#sibo header p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#sibo img {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#sibo a button {
+    margin-top: 2rem;
+}
+
+@media (min-width: 1080px) {
+    section#sibo {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    section#sibo .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+        align-items: center;
+        grid-template-areas: "a b";
+    }
+
+    section#sibo header {
+        margin-bottom: 0;
+        align-items: start;
+        text-align: left;
+        grid-area: a;
+        margin-bottom: 0;
+    }
+
+    section#sibo header h2 {
+        font-size: 4rem;
+
+        margin-bottom: 1rem;
+    }
+
+    section#sibo img {
+        margin-bottom: 0;
+    }
+
+    section#sibo header p {
+        font-size: 1.6rem;
+    }
+
+    section#sibo a button {
+        margin-top: 2rem;
+    }
+}
