@@ -1,0 +1,21 @@
+@media (min-width: 1080px) {
+    body.v2 header#home h1 {
+        font-size: 7rem;
+    }
+
+    body.v2 section#services header {
+        margin-bottom: 0;
+    }
+
+    body.v2 section#services .row-2 .card:nth-child(1) p {
+        font-size: 1.8rem;
+    }
+
+    body.v2 section#services .row-2 .card:nth-child(3) p {
+        font-size: 1.6rem;
+    }
+
+    body.v2 section#services .row-2 .card:nth-child(3) h3 {
+        font-size: 2rem;
+    }
+}
