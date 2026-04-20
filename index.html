@@ -97,7 +97,7 @@
               </div>
 
               <a target="_blank" href="https://wa.link/3afxy1">
-                <button class="button rosa">Agende um horário</button>
+                <button class="button rosa abrir-formulario">Agende um horário</button>
               </a>
             </div>
           </div>
@@ -202,7 +202,7 @@
               <span>disposição</span> e <span>saúde dos seus pacientes</span>.
             </p>
 
-            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa">Agende agora um horário</button></a>
+            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa abrir-formulario">Agende agora um horário</button></a>
           </header>
         </div>
       </div>
@@ -398,7 +398,7 @@
           </div>
 
 
-          <a data-aos="fade-up" target="_blank" href="https://wa.link/3afxy1"><button class="button">Fale com a Dra. Mayra agora</button></a>
+          <a data-aos="fade-up" target="_blank" href="https://wa.link/3afxy1"><button class="button abrir-formulario">Fale com a Dra. Mayra agora</button></a>
         </div>
       </div>
     </section>
@@ -417,7 +417,7 @@
 
             <p class="dois">📌 <span>Av. T-2, 471 - St. Bueno, Goiânia - GO</span>, 74210-005, Brasil. Edifício Focus Business Center</p>
 
-            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa">Agendar consulta agora</button></a>
+            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa abrir-formulario">Agendar consulta agora</button></a>
           </header>
 
           <iframe class="desktop" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7642.951262858948!2d-49.272752700000005!3d-16.7031034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef1c653edde13%3A0xc7e9f2623909771b!2sDra%20Mayra%20Freitas%20Storti!5e0!3m2!1spt-BR!2sbr!4v1752069435041!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -487,7 +487,7 @@
             <img loading="lazy" class="logo" src="./assets/logo.webp" alt="">
             <h2>Agende sua consulta hoje mesmo e <span>comece a transformar sua vida</span>!</h2>
             <p>Clique no botão abaixo para marcar sua consulta com a <span>Dra. Mayra Storti</span> e descubra como podemos ajudar você a <span>alcançar seus objetivos de saúde</span>.</p>
-            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa">Agendar agora</button></a>
+            <a target="_blank" href="https://wa.link/3afxy1"><button class="button rosa abrir-formulario">Agendar agora</button></a>
           </header>
         </div>
       </div>
@@ -565,6 +565,21 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPBRHJ3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+      <!-- Estilos do formulário (arquivo hospedado no SEU site) -->
+<link rel="stylesheet" href="./form/formulario.css">
+
+<!-- Script do formulário (arquivo hospedado no SEU site, antes do </body>) -->
+<script
+  src="./form/formulario.js"
+  data-client-id="d8cdd4a9-5335-43e7-8103-23c01619e538"
+  data-embed-key="LB_6efef8c1acc63533e1950794fa607c3d"
+  data-api="https://smxqwizgwqeixubagkej.supabase.co/functions/v1/receive-lead"
+  data-redirect="https://api.whatsapp.com/send?phone=5562982080031&text=Ol%C3%A1,%20meu%20nome%20%C3%A9%20Gustavo%20Teste.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20pode%20me%20ajudar?"
+  data-debug="false"
+  defer
+></script>
+
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script defer>
       // Initialize Lenis with options
@@ -592,5 +607,149 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script defer src="./script.js?v=6"></script>
+
+    <script>
+(function () {
+  function apply() {
+    const btn = document.querySelector("#whatsapp-submit");
+    if (!btn) return false;
+
+    // força abrir em nova aba (pra não sair da LP)
+    btn.setAttribute("formtarget", "_blank");
+    btn.setAttribute("rel", "noopener");
+
+    return true;
+  }
+
+  if (apply()) return;
+
+  const obs = new MutationObserver(() => {
+    if (apply()) obs.disconnect();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+
+
+    <script>
+(function () {
+  const LOCALBOOST_API = "https://smxqwizgwqeixubagkej.supabase.co/functions/v1/receive-lead";
+  const LOCALBOOST_CLIENT_ID = "d8cdd4a9-5335-43e7-8103-23c01619e538";
+  const LOCALBOOST_EMBED_KEY = "LB_6efef8c1acc63533e1950794fa607c3d"; // <-- COLE AQUI
+
+  const DEBUG = true; // mude para false depois
+
+  const qs = (s) => document.querySelector(s);
+
+  function getUtm() {
+    const p = new URLSearchParams(location.search);
+    const keys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
+    const utm = {};
+    keys.forEach(k => { const v = p.get(k); if (v) utm[k] = v; });
+    return Object.keys(utm).length ? utm : undefined;
+  }
+
+  function cleanPhone(v) {
+    return (v || "").toString().trim();
+  }
+
+  function buildPayload() {
+    const name = (qs("#wpp-name")?.value || "").trim();
+    const phone = cleanPhone(qs("#wpp-phone")?.value || "");
+
+    if (!name || !phone) return null;
+
+    return {
+      clientId: LOCALBOOST_CLIENT_ID,
+      embedKey: LOCALBOOST_EMBED_KEY,
+      name,
+      email: "", // mais seguro que null, caso o backend valide string
+      phone,
+      pageUrl: location.href,
+      utm: getUtm(),
+    };
+  }
+
+  function send(payload) {
+    const body = JSON.stringify(payload);
+
+    // 1) Melhor opção quando vai navegar pra outra página
+    if (navigator.sendBeacon) {
+      const ok = navigator.sendBeacon(
+        LOCALBOOST_API,
+        new Blob([body], { type: "application/json" })
+      );
+      if (DEBUG) console.log("[LocalBoost] sendBeacon:", ok, payload);
+      return;
+    }
+
+    // 2) Fallback
+    fetch(LOCALBOOST_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+      mode: "cors",
+      keepalive: true,
+    })
+      .then(async (r) => {
+        const t = await r.text().catch(() => "");
+        if (DEBUG) console.log("[LocalBoost] fetch status:", r.status, t);
+      })
+      .catch((e) => {
+        if (DEBUG) console.log("[LocalBoost] fetch error:", e);
+      });
+  }
+
+  let sentRecently = false;
+  function fire() {
+    if (sentRecently) return;
+    sentRecently = true;
+    setTimeout(() => (sentRecently = false), 6000);
+
+    const payload = buildPayload();
+    if (!payload) {
+      if (DEBUG) console.log("[LocalBoost] payload vazio (nome/telefone faltando)");
+      return;
+    }
+    send(payload);
+  }
+
+  function bind() {
+    const form = qs("#whatsapp-form");
+    const btn = qs("#whatsapp-submit");
+    if (!form || !btn) return false;
+
+    if (form.dataset.lbBound === "1") return true;
+    form.dataset.lbBound = "1";
+
+    // Captura SUBMIT (principal)
+    form.addEventListener("submit", function () {
+      fire();
+      // não bloqueia submit
+    }, true);
+
+    // Captura CLICK (backup)
+    btn.addEventListener("click", function () {
+      fire();
+    }, true);
+
+    // Captura mousedown/touchstart (ainda mais cedo)
+    btn.addEventListener("mousedown", fire, { capture: true });
+    btn.addEventListener("touchstart", fire, { capture: true });
+
+    if (DEBUG) console.log("[LocalBoost] bound ok");
+    return true;
+  }
+
+  if (bind()) return;
+
+  const obs = new MutationObserver(() => {
+    if (bind()) obs.disconnect();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+
+
 </body>
 </html> 
