@@ -293,6 +293,7 @@
           email: email || undefined,
           phone: phone || undefined,
           pageUrl: window.location.href,
+          referrer: document.referrer || undefined,
           utm: getUtm(),
         };
 
