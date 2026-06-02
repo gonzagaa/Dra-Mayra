@@ -1,9 +1,51 @@
+body.v4 #beneficios .card p {
+    font-size: 1.6rem;
+    color: var(--secondy-color);
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+body.v4 #depoimentos .card {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: initial;
+    -webkit-backdrop-filter: initial;
+
+    min-height: initial !important;
+    height: initial !important;
+    max-height: initial !important;
+    border: 0;
+
+    overflow: initial !important;
+}
+
+body.v4 #depoimentos .card img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
 @media (min-width: 1080px) {
     body.v4 header#home h1 {
         font-size: 5rem;
     }
 
     body.v4 section#services .row-2 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    body.v4 section#services .row-2 .card:nth-child(3) p {
+        font-size: 1.6rem;
+    }
+
+    body.v4 #beneficios .card:nth-child(1) p,
+    body.v4 #beneficios .card:nth-child(2) p {
+        font-size: 2rem;
+    }
+
+    body.v4 section#depoimentos .card {
+        min-height: initial;
+        height: initial;
     }
 }
+

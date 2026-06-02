@@ -12,6 +12,58 @@ body.v3 #sobre {
     padding-top: 4rem;
 }
 
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.6rem;
+  border: 2px solid #3A9B8A;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+input[type="checkbox"]:hover {
+  box-shadow: 0 0 0 4px rgba(58, 155, 138, 0.15);
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(to right, #3A9B8A, #5ce4cb);
+  border-color: transparent;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 0.45rem;
+  height: 0.9rem;
+  border: solid #fff;
+  border-width: 0 0.18rem 0.18rem 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(92, 228, 203, 0.25);
+}
+
+body.v3 #cta.tres header ul {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: #f1f1f1;
+
+    padding-left: 3rem;
+}
+
+body.v3 #cta.tres header ul li {
+    list-style: disc;
+    text-align: left;
+}
+
 @media (min-width: 1080px) {
     body.v3 header#home h1 {
         font-size: 5rem;
@@ -24,4 +76,28 @@ body.v3 #sobre {
     body.v3 section#services .row-2 .card:nth-child(3) p {
         font-size: 1.4rem;
     }
+
+    body.v3 #cta.tres header {
+        padding-inline: 15%;
+    }
+
+    body.v3 #cta.tres header h2.dois {
+        margin-top: 3rem;
+    }
+
+    body.v3 #cta.tres header ul {
+        margin-block: 2rem;
+    }
+
+    body.v3 section#depoimentos .content .cards .card {
+        height: 45vh;
+        max-height: 45vh;
+        overflow: hidden;
+    }
+
+    body.v3 section#depoimentos .content .cards .card .text {
+        height: calc(100% - 80px); /* Altura restante após o .head (ajuste conforme necessário) */
+        overflow: hidden;
+    }
+
 }

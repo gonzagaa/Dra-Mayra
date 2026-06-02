@@ -76,6 +76,10 @@
   transform: scale(1.05);
 }
 
+div.button {
+  padding: 0;
+}
+
 .form-container input {
   display: block;
   width: 100%;

@@ -1,0 +1,88 @@
+#topicos {
+    overflow: hidden;
+    position: relative;
+}
+
+#topicos header h2 {
+    font-size: 2rem;
+}
+
+#topicos .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#topicos .card {
+    text-align: left;
+
+    border-left: 3px solid #3A9B8A;
+    height: 100%;
+
+    padding-left: 2rem;
+    padding-block: 1rem;
+}
+
+#topicos .card h4 {
+    background: linear-gradient(to right, #96227B, #c636a4);
+    color: #f1c1e6;
+    padding: .6rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    width: max-content;
+}
+
+#topicos .card h3 {
+    font-size: 2.5rem;
+    color: var(--secondy-color);
+    font-weight: 600;
+}
+
+#topicos .card h3 span {
+    font-weight: 600;
+}
+
+#topicos .card p {
+    font-size: 1.4rem;
+    color: var(--secondy-color);
+    margin-top: 1rem;
+}
+
+#topicos a button {
+    margin-top: 3rem;
+}
+ 
+@media (min-width: 1080px) {
+    section#topicos {
+        margin-top: 0;
+    }
+
+    section#topicos header h2 {
+        font-size: 4rem;
+        padding-inline: 10%;
+    }
+
+    section#topicos .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    section#topicos .card {
+        padding-left: 3rem;
+    }
+
+    section#topicos a button {
+        margin-top: 5rem;
+    }
+
+    section#topicos .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

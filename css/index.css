@@ -1,20 +1,22 @@
-@import './global.css';
-@import './home.css';
-@import './sectionSlide.css';
-@import './sectionSobre.css';
-@import './sectionServices.css';
-@import './sectionBeneficios.css';
-@import './sectionDepoimentos.css';
-@import './sectionClinica.css';
-@import './sectionFaq.css';
-@import './sectionCta.css';
-@import './author.css';
+@import './global.css?v=20260602';
+@import './home.css?v=20260602';
+@import './sectionSlide.css?v=20260602';
+@import './sectionSobre.css?v=20260602';
+@import './sectionServices.css?v=20260602';
+@import './sectionBeneficios.css?v=20260602';
+@import './sectionDepoimentos.css?v=20260602';
+@import './sectionClinica.css?v=20260602';
+@import './sectionFaq.css?v=20260602';
+@import './sectionCta.css?v=20260602';
+@import './author.css?v=20260602';
 
-@import './sectionSibo.css';
+@import './sectionSibo.css?v=20260602';
 
-@import './button.css';
-@import './head.css';
-@import './sectionSolucao.css';
+@import './button.css?v=20260602';
+@import './head.css?v=20260602';
+@import './sectionSolucao.css?v=20260602';
+@import './sectionTabelas.css?v=20260602';
+@import './sectionTopicos.css?v=20260602';
 
 
 

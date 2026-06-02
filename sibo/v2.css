@@ -1,21 +1,66 @@
+body.v2 section#services header.dois {
+    margin-top: 2rem;
+}
+
+body.v2 section#beneficios header.dois {
+    margin-top: 5rem;
+}
+
+body.v2 #depoimentos .card {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: initial;
+    -webkit-backdrop-filter: initial;
+
+    min-height: initial !important;
+    height: initial !important;
+    max-height: initial !important;
+    border: 0;
+
+    overflow: initial !important;
+}
+
+body.v2 #depoimentos .card img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
 @media (min-width: 1080px) {
     body.v2 header#home h1 {
         font-size: 7rem;
+    }
+
+    body.v2 section#services {
+        margin-top: 4rem;
     }
 
     body.v2 section#services header {
         margin-bottom: 0;
     }
 
-    body.v2 section#services .row-2 .card:nth-child(1) p {
-        font-size: 1.8rem;
-    }
+     body.v2 section#services .row-2 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+     }
 
-    body.v2 section#services .row-2 .card:nth-child(3) p {
+    body.v2 section#services .row-2 .card:nth-child(1) p,
+    body.v2 section#services .row-2 .card:nth-child(2) p,
+    body.v2 section#services .row-2 .card:nth-child(3) p,
+    body.v2 section#services .row-2 .card:nth-child(4) p {
         font-size: 1.6rem;
     }
 
     body.v2 section#services .row-2 .card:nth-child(3) h3 {
         font-size: 2rem;
+    }
+
+    body.v2 section#services header.dois {
+        margin-top: 3rem;
+        padding-inline: 20%;
+    }
+
+    body.v2 section#beneficios .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }

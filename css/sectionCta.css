@@ -1,9 +1,28 @@
 #cta header h2 {
     margin-bottom: 1rem;
+    font-size: 2.7rem;
 }
 
 #cta header {
     margin-bottom: 0;
+}
+
+#cta header a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cta header p {
+    font-size: 1.6rem;
+}
+
+#cta header p.obs {
+    background: var(--gradient);
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    color: #fff;
 }
 
 #cta img.logo {
@@ -11,10 +30,19 @@
     margin-bottom: 2rem;
 }
 
+#cta.dois {
+    padding-top: 10rem;
+}
+
 @media (min-width: 1080px) {
     section#cta {
         padding-top: 0;
         padding-bottom: 6rem;
+    }
+
+    section#cta header h2 {
+        font-size: 4rem;
+        width: 70%;
     }
 
     section#cta header {

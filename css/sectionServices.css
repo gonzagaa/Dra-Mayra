@@ -64,6 +64,17 @@
     font-weight: 500;
 }
 
+#services .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#services .content a button {
+    margin-top: 5rem;
+}
+
 @media (min-width: 1080px) {
     section#services .cards .row-1 {
         display: grid;
