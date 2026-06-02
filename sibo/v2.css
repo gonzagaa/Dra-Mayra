@@ -26,9 +26,24 @@ body.v2 #depoimentos .card img {
     width: 100%;
 }
 
+body.v2 h4 {
+    font-size: 1.5rem;
+    background: var(--gradient);
+    padding: .5rem 1rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: .5rem;
+
+    margin-block: 1rem;
+}
+
 @media (min-width: 1080px) {
     body.v2 header#home h1 {
         font-size: 7rem;
+    }
+
+    body.v2 header#home h4 {
+        font-size: 1.8rem;
     }
 
     body.v2 section#services {
